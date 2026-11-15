@@ -1,0 +1,15 @@
+CREATE TABLE public.categories (
+    category_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    description TEXT
+);
+
+ALTER TABLE public.categories ENABLE ROW LEVEL SECURITY;
+
+INSERT INTO public.categories (name, description)
+VALUES
+    ('Mountain Bike', 'Bicycles for trails and uneven terrain'),
+    ('Road Bike', 'Bicycles for cycling on paved roads'),
+    ('Gravel Bike', 'Bicycles for paved and unpaved roads'),
+    ('Electric Bike', 'Bicycles with electric motor assistance');
+
